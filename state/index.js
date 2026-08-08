@@ -50,6 +50,12 @@ export let pickedBlockIndex = undefined; // undefined as an init value, so in th
 export function setPickedBlockIndex(index) {
 	pickedBlockIndex = index;
 }
+/** {x: number; y: number} or `number` */
+export let pickedBlockCellCoords = undefined;
+export function setPickedBlockCellCoords(c) {
+	pickedBlockCellCoords = c;
+	console.log("pickedBlockCellCoords", pickedBlockCellCoords);
+}
 
 /** `undefined` or `{ x: number, y: number }` */
 export let pickedCellCoords = undefined; // undefined as an init value, so in the beginning of the game clicking the board accidentally will not place a block there
@@ -78,6 +84,7 @@ function resetState() {
 	set3randomBlocksToPick();
 	pickedBlockIndex = undefined;
 	pickedCellCoords = undefined;
+	pickedBlockCellCoords = undefined;
 
 	drawBoard();
 	drawBlocksToPickFromSection();
