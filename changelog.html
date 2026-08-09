@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>🧱Block Puzzle Game🔥Changelog</title>
+		<meta name="author" content="Vadim Gierko" />
+		<meta name="description" content="Block Puzzle Game Changelog" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header style="text-align: center">
+			<h1>Changelog</h1>
+			<p><a href="/">home</a> <a href="/about.html">about</a></p>
+		</header>
+		<hr />
+		<h2>
+			adjust small blocks (1-3 cells) percentage for better gaming; add new
+			shapes
+		</h2>
+		<ul>
+			<li>adjust small blocks (1-3 cells) percentage for better gaming</li>
+			<li>add new shapes</li>
+			<li>
+				add derived blocks props for stats &amp; future use:
+				<ul>
+					<li>size (3<em>3, 3</em>2, 2<em>2, 2</em>1, 1*1)</li>
+					<li>cell num (1-9)</li>
+					<li>shape (square, I (line), Z, S, U, C, V, H, T, L, O, X, Y, +)</li>
+					<li>left/right</li>
+					<li>horizontal/vertical</li>
+					<li>up/down</li>
+				</ul>
+			</li>
+		</ul>
+		<h2>implement basic drag and drop</h2>
+		<h2>improve rows &amp; cols popping and enable all blocks shapes</h2>
+		<ul>
+			<li>
+				set timeout to pop rows &amp; cols &amp; add fire emoji to them, so it
+				is visible to the user
+			</li>
+			<li>fix placing blocks with not equal w and h</li>
+			<li>add ids to every cell, so the element can be accessed</li>
+		</ul>
+		<h2>enable first gameable experience with limited blocks options</h2>
+		<ul>
+			<li>add remaining blocks to block schemas</li>
+			<li>assign different random colors to blocks when game starts</li>
+			<li>detect full rows &amp; cols and pop them</li>
+			<li>randomly choose 3 blocks per move</li>
+			<li>implement scoring</li>
+			<li>enable game reset</li>
+		</ul>
+		<h2>Initial scaffold for block puzzle game</h2>
+		<ul>
+			<li>constants (BOARD_WIDTH/HEIGHT and BLOCKS definitions)</li>
+			<li>app state</li>
+			<li>core library functions</li>
+			<li>board initialization (initBoardObject)</li>
+			<li>rendering (drawBoard, drawBlocksToPickFromSection)</li>
+			<li>random helper (getRandomInt)</li>
+			<li>
+				block placement logic (putBlockIntoBoard) with fit/collision checks
+			</li>
+		</ul>
+		<hr />
+		<footer style="text-align: center">&copy; 2026 Vadim Gierko</footer>
+	</body>
+</html>

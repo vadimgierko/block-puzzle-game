@@ -3,32 +3,27 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Block Puzzle Game</title>
+		<title>🧱Block Puzzle Game🔥</title>
 		<meta name="author" content="Vadim Gierko" />
-		<style>
-			* {
-				box-sizing: border-box;
-				text-align: center;
-				background-color: rgb(47, 47, 47);
-				color: white;
-				font-family: sans-serif;
-			}
-
-			#board {
-				font-size: small;
-			}
-		</style>
+		<meta
+			name="description"
+			content="Put blocks into the board and pop full rows and columns!"
+		/>
+		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body>
+	<body style="text-align: center">
 		<header>
-			<h1>🧱 Block Puzzle Game 🎮</h1>
+			<h1>🧱Block Puzzle Game🔥</h1>
+			<p>Put blocks into the board and pop full rows and columns!</p>
 			<p>
 				🏆 score: <span id="score">0</span> <button id="reset">reset</button>
+				<a href="/about.html">about</a> <a href="/changelog.html">changelog</a>
 			</p>
 		</header>
 		<div id="board"></div>
 		<hr />
 		<div id="blocks"></div>
+		<hr />
 		<footer>&copy; 2026 Vadim Gierko</footer>
 	</body>
 	<script src="script.js" type="module"></script>
