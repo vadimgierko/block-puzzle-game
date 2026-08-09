@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    background-color: rgb(47, 47, 47);
+    color: white;
+    font-family: sans-serif;
+}
+
+#board {
+  font-size: small;
+}

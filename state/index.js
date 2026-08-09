@@ -29,15 +29,52 @@ export let board = initBoardObject();
 export let blocksToPickFrom = [];
 // console.log("blocksToPickFrom", blocksToPickFrom);
 export function set3randomBlocksToPick() {
+	// ADJUST PERCENTAGE OF 1-3-CELL BLOCKS TO BE EQUAL:
+	const BLOCKS_ADJUSTED = [];
+	BLOCKS.forEach((b) => {
+		if (b.cellNum === 1) {
+			for (let i = 0; i < 25; i++) {
+				BLOCKS_ADJUSTED.push(structuredClone(b));
+			}
+		} else if (b.cellNum === 2) {
+			for (let i = 0; i < 12; i++) {
+				BLOCKS_ADJUSTED.push(structuredClone(b));
+			}
+		} else if (b.cellNum === 3) {
+			for (let i = 0; i < 4; i++) {
+				BLOCKS_ADJUSTED.push(structuredClone(b));
+			}
+		} else {
+			BLOCKS_ADJUSTED.push(structuredClone(b));
+		}
+		// b.cellNum === 7 || b.cellNum === 8 || b.cellNum === 9
+	});
+	// adjusted blocks with 1 cells: 25/129 (19%)
+	// adjusted blocks with 2 cells: 24/129 (19%)
+	// adjusted blocks with 3 cells: 24/129 (19%)
+	// adjusted blocks with 4 cells: 23/129 (18%)
+	// adjusted blocks with 5 cells: 25/129 (19%)
+	// adjusted blocks with 6 cells: 0/129 (0%)
+	// adjusted blocks with 7 cells: 6/129 (5%) ⁉️ => should this be adjusted too ⁉️
+	// adjusted blocks with 8 cells: 1/129 (1%) ⁉️ => should this be adjusted too ⁉️
+	// adjusted blocks with 9 cells: 1/129 (1%) ⁉️ => should this be adjusted too ⁉️
+
+	// adjusted blocks stats:
+	[1, 2, 3, 4, 5, 6, 7, 8, 9].forEach((n) => {
+		console.log(
+			`adjusted blocks with ${n} cells: ${BLOCKS_ADJUSTED.filter((b) => b.cellNum === n).length}/${BLOCKS_ADJUSTED.length} (${((BLOCKS_ADJUSTED.filter((b) => b.cellNum === n).length / BLOCKS_ADJUSTED.length) * 100).toFixed()}%)`,
+		);
+	});
+
 	const randomNums = [];
 
 	for (let i = 0; i < 3; i++) {
-		const randomNum = getRandomInt(BLOCKS.length);
+		const randomNum = getRandomInt(BLOCKS_ADJUSTED.length);
 		randomNums.push(randomNum);
 	}
 
 	const blocks = [];
-	randomNums.forEach((n) => blocks.push(structuredClone(BLOCKS[n])));
+	randomNums.forEach((n) => blocks.push(BLOCKS_ADJUSTED[n]));
 
 	blocksToPickFrom = blocks;
 	//return blocks;
