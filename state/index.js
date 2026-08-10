@@ -7,11 +7,23 @@ import { putBlockIntoBoard } from "../lib/putBlockIntoBoard.js";
 
 // HTML STATE
 export const BOARD_EL = document.getElementById("board");
-export const BLOCKS_TO_PICK_FROM_SECTION_EL = document.getElementById("blocks");
-export const SCORE_EL = document.getElementById("score");
-export const RESER_BTN = document.getElementById("reset");
+// Cancel dragover so that drop can fire
+BOARD_EL.addEventListener("dragover", (e) => {
+	e.preventDefault();
+});
 
+export const BLOCKS_TO_PICK_FROM_SECTION_EL = document.getElementById("blocks");
+
+export const SCORE_EL = document.getElementById("score");
+
+export const RESER_BTN = document.getElementById("reset");
 RESER_BTN.addEventListener("click", resetState);
+
+const RESET_BLOCKS_TO_PICK_BTN = document.getElementById("reset-blocks");
+RESET_BLOCKS_TO_PICK_BTN.addEventListener("click", () => {
+	set3randomBlocksToPick();
+	drawBlocksToPickFromSection();
+});
 
 // JS STATE
 export let score = 0;
@@ -60,11 +72,11 @@ export function set3randomBlocksToPick() {
 	// adjusted blocks with 9 cells: 1/129 (1%) ⁉️ => should this be adjusted too ⁉️
 
 	// adjusted blocks stats:
-	[1, 2, 3, 4, 5, 6, 7, 8, 9].forEach((n) => {
-		console.log(
-			`adjusted blocks with ${n} cells: ${BLOCKS_ADJUSTED.filter((b) => b.cellNum === n).length}/${BLOCKS_ADJUSTED.length} (${((BLOCKS_ADJUSTED.filter((b) => b.cellNum === n).length / BLOCKS_ADJUSTED.length) * 100).toFixed()}%)`,
-		);
-	});
+	// [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach((n) => {
+	// 	console.log(
+	// 		`adjusted blocks with ${n} cells: ${BLOCKS_ADJUSTED.filter((b) => b.cellNum === n).length}/${BLOCKS_ADJUSTED.length} (${((BLOCKS_ADJUSTED.filter((b) => b.cellNum === n).length / BLOCKS_ADJUSTED.length) * 100).toFixed()}%)`,
+	// 	);
+	// });
 
 	const randomNums = [];
 

@@ -1,10 +1,25 @@
 * {
-    box-sizing: border-box;
-    background-color: rgb(47, 47, 47);
-    color: white;
-    font-family: sans-serif;
+  box-sizing: border-box;
+  background-color: rgb(47, 47, 47);
+  color: white;
+  font-family: sans-serif;
 }
 
 #board {
   font-size: small;
+}
+
+.row {
+  margin: 0px auto;
+}
+
+.col {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.highlighted {
+  border-color: yellow;
 }
