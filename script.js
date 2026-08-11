@@ -1,6 +1,5 @@
 import { BLOCKS } from "./consts/blocks.js";
 import { drawBlocksToPickFromSection } from "./lib/drawBlocksToPickFromSection.js";
-import { drawBoard } from "./lib/drawBoard.js";
 import { initBoard } from "./lib/initBoard.js";
 import { set3randomBlocksToPick } from "./state/index.js";
 

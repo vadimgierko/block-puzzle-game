@@ -13,6 +13,10 @@ Online web game 🎮, where user should put 3 random blocks 🧱 per move into t
 ## Issues / Problems
 
 ### General
+- the app crushes the browser after longer play...
+  - ✅ dragged block projection on the board (along with all loops inside event listeners and most of event listeners) removed, but still crushes...
+  - ✅ remove `drawBoard()` & use `putBlockIntoBoard()` logic to "redraw" only needed cells (when block is put and cells are poped)
+  - ❌ fix blocks to pick section to create and then remove nodes along with the listeners
 - when column pops, its cells become bigger (taller) with the fire emoji inside and it ruins the board styles for a second...
 - think of how to use rotatble & mirrorable props for blocks and derived blocks state
 
@@ -22,7 +26,7 @@ Online web game 🎮, where user should put 3 random blocks 🧱 per move into t
 ### Mobile
 - highlighting cells under the dragged block doesn't work...
 - the dragged block is centered under the finger, so it's hard to place it, becuase the block is put on the board under finger, but this is top-left corner of the block, not the center...
-  - in similar mobile game, when block is picked it appears and moves 1 cm above the finger and its "shadow" shows almost precisely under the dragged block
+  - 💡 in similar mobile game, when block is picked it appears and moves 1 cm above the finger and its "shadow" shows almost precisely under the dragged block
 
 ## TODO 🚀
 - expand README (and add pages) with reasons for tech stack, why built (rebuilt with changes) the game

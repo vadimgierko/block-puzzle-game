@@ -2,9 +2,6 @@
 
 ## implement init board func to set listeners add reset blocks btn
 
-- split drawBoard into drawBoard & initBoard funcs and set listeners in initBoard to prevent
-  - setting & adding listeners on every draw, what results in browser crush eventually
-  - redrawing the entire board so many times
 - add reset blocks to pick button
 - fix home link
 

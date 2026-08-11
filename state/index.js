@@ -1,9 +1,10 @@
 import { BLOCKS } from "../consts/blocks.js";
 import { drawBlocksToPickFromSection } from "../lib/drawBlocksToPickFromSection.js";
-import { drawBoard } from "../lib/drawBoard.js";
 import { getRandomInt } from "../lib/getRandomInt.js";
+import { initBoard } from "../lib/initBoard.js";
 import { initBoardObject } from "../lib/initBoardObject.js";
 import { putBlockIntoBoard } from "../lib/putBlockIntoBoard.js";
+import { resetBoard } from "../lib/resetBoard.js";
 
 // HTML STATE
 export const BOARD_EL = document.getElementById("board");
@@ -132,12 +133,11 @@ export function setPickedCellCoords(coords) {
 function resetState() {
 	score = 0;
 	board = initBoardObject();
+	resetBoard();
 	set3randomBlocksToPick();
 	pickedBlockIndex = undefined;
 	pickedCellCoords = undefined;
 	pickedBlockCellCoords = undefined;
-
-	drawBoard();
 	drawBlocksToPickFromSection();
 	SCORE_EL.textContent = score;
 }
