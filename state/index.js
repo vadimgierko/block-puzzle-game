@@ -12,6 +12,8 @@ BOARD_EL.addEventListener("dragover", (e) => {
 	e.preventDefault();
 });
 
+export const BOARD_CELLS = [];
+
 export const BLOCKS_TO_PICK_FROM_SECTION_EL = document.getElementById("blocks");
 
 export const SCORE_EL = document.getElementById("score");
