@@ -13,19 +13,24 @@ Online web game 🎮, where user should put 3 random blocks 🧱 per move into t
 ## Issues / Problems
 
 ### General
-- the app crushes the browser after longer play...
-  - ✅ dragged block projection on the board (along with all loops inside event listeners and most of event listeners) removed, but still crushes...
-  - ✅ remove `drawBoard()` & use `putBlockIntoBoard()` logic to "redraw" only needed cells (when block is put and cells are poped)
-  - ❌ fix blocks to pick section to create and then remove nodes along with the listeners
-- when column pops, its cells become bigger (taller) with the fire emoji inside and it ruins the board styles for a second...
-- think of how to use rotatble & mirrorable props for blocks and derived blocks state
+- fix blocks to pick section to create and then remove nodes along with the listeners
+- think of how to use rotatable & mirrorable props for blocks and derived blocks state
 
 ### Web
-- when the block was dragged, but put back or outside the board, last highlighted board cell remain highlighted...
 
 ### Mobile
-- highlighting cells under the dragged block doesn't work...
-- the dragged block is centered under the finger, so it's hard to place it, becuase the block is put on the board under finger, but this is top-left corner of the block, not the center...
+- the dragged block is centered under the finger, so it's hard to place it, becuase the block is put on the board under finger, but this is top-left corner of the block, not the center... => use `isMobile()` and if true offset block 1/2 left-top:
+  ```js
+  export function isMobile() {
+    if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+      console.log("Mobile device detected");
+      return true;
+    }
+
+    console.log("Desktop device detected");
+    return false;
+  }
+  ```
   - 💡 in similar mobile game, when block is picked it appears and moves 1 cm above the finger and its "shadow" shows almost precisely under the dragged block
 
 ## TODO 🚀

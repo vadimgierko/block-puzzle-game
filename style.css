@@ -5,21 +5,13 @@
   font-family: sans-serif;
 }
 
-#board {
-  font-size: small;
-}
-
-.row {
-  margin: 0px auto;
+table#board {
+  margin: 0 auto;
+  border: 1px solid rgb(190, 190, 190);
 }
 
 .col {
   width: 40px;
   height: 40px;
-  display: inline-block;
   border: 1px solid black;
-}
-
-.highlighted {
-  border-color: yellow;
 }
